@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Senior Java Backend Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">John Doe</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">John Doe</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="static-text">Senior Java Backend Developer</span>
+                </div>
+                <p class="hero-description">
+                    Experienced Java developer with 5+ years of expertise in building scalable backend systems using Spring Boot, microservices, and cloud technologies. Passionate about clean code, system design, and solving complex problems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn--primary btn--lg">View My Work</a>
+                    <a href="#contact" class="btn btn--secondary btn--lg">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/johndoe" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/johndoe" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/johndoe" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Technologies and tools I work with</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Backend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="90">
+                            <div class="skill-header">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="85">
+                            <div class="skill-header">
+                                <span class="skill-name">Spring Boot</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="80">
+                            <div class="skill-header">
+                                <span class="skill-name">Microservices</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Database & Cloud</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="85">
+                            <div class="skill-header">
+                                <span class="skill-name">MySQL/PostgreSQL</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="75">
+                            <div class="skill-header">
+                                <span class="skill-name">AWS</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="70">
+                            <div class="skill-header">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">A showcase of my professional and personal work</p>
+            <div class="project-tabs">
+                <button class="tab-button active" data-tab="professional-projects">
+                    Professional Projects
+                </button>
+                <button class="tab-button" data-tab="personal-projects">
+                    Personal Projects
+                </button>
+            </div>
+            <div class="project-content active" id="professional-projects">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">E-commerce Platform</h3>
+                            <span class="project-company">TechCorp Inc.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration">Jan 2023 - Present</span>
+                        </div>
+                        <p class="project-description">
+                            Lead backend developer for a high-traffic e-commerce platform serving 10M+ users
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Improved system performance by 40%</li>
+                                <li>Reduced API response time from 500ms to 150ms</li>
+                                <li>Implemented caching strategy reducing database load by 60%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Payment Gateway Integration</h3>
+                            <span class="project-company">FinTech Solutions</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration">Mar 2022 - Dec 2022</span>
+                        </div>
+                        <p class="project-description">
+                            Developed secure payment processing system with multiple gateway integrations
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Security</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Apache Kafka</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Processed $50M+ in transactions monthly</li>
+                                <li>Achieved 99.9% uptime</li>
+                                <li>Integrated with 5+ payment gateways</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Inventory Management System</h3>
+                            <span class="project-company">Retail Chain Co.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration">Jun 2021 - Feb 2022</span>
+                        </div>
+                        <p class="project-description">
+                            Built scalable inventory tracking system for multi-location retail chain
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">RabbitMQ</span>
+                        </div>
+                        <div class="project-achievements">
+                            <ul>
+                                <li>Managed inventory for 200+ stores</li>
+                                <li>Real-time stock synchronization</li>
+                                <li>Automated reorder notifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-content" id="personal-projects">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Task Management API</h3>
+                        </div>
+                        <p class="project-description">
+                            RESTful API for task management with JWT authentication and role-based access control
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">H2 Database</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">URL Shortener Service</h3>
+                        </div>
+                        <p class="project-description">
+                            High-performance URL shortening service with analytics and custom domains
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My career journey and key accomplishments</p>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-year">2023 - Present</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Senior Java Backend Developer</h3>
+                        <span class="experience-company">TechCorp Inc. | San Francisco, CA</span>
+                        <p class="experience-description">
+                            Leading backend development for high-traffic e-commerce platform serving 10M+ users. Architecting microservices, optimizing database performance, and mentoring junior developers.
+                        </p>
+                        <div class="experience-highlights">
+                            <ul>
+                                <li>Improved system performance by 40% through code optimization and caching strategies</li>
+                                <li>Led migration from monolithic to microservices architecture</li>
+                                <li>Mentored team of 5 junior developers</li>
+                                <li>Reduced deployment time from 2 hours to 15 minutes using CI/CD pipelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-year">2022 - 2023</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Java Backend Developer</h3>
+                        <span class="experience-company">FinTech Solutions | New York, NY</span>
+                        <p class="experience-description">
+                            Developed secure payment processing systems and financial APIs. Worked with compliance requirements and integrated multiple payment gateways.
+                        </p>
+                        <div class="experience-highlights">
+                            <ul>
+                                <li>Built payment gateway integration handling $50M+ monthly transactions</li>
+                                <li>Implemented security protocols achieving SOC2 compliance</li>
+                                <li>Developed real-time fraud detection system</li>
+                                <li>Maintained 99.9% uptime for critical financial systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-year">2020 - 2022</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Software Developer</h3>
+                        <span class="experience-company">StartupTech | Austin, TX</span>
+                        <p class="experience-description">
+                            Full-stack development role focusing on backend services using Java and Spring Boot. Collaborated in agile environment to deliver customer-facing applications.
+                        </p>
+                        <div class="experience-highlights">
+                            <ul>
+                                <li>Developed REST APIs serving 1M+ requests daily</li>
+                                <li>Implemented automated testing reducing bug reports by 50%</li>
+                                <li>Collaborated with frontend team to deliver seamless user experiences</li>
+                                <li>Contributed to company's first mobile app backend</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <p class="section-subtitle">Academic background and professional credentials</p>
+            <div class="education-grid">
+                <div class="education-column">
+                    <h3 class="column-title">Education</h3>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4 class="education-degree">Bachelor of Science in Computer Science</h4>
+                            <span class="education-year">2020</span>
+                        </div>
+                        <p class="education-institution">State University</p>
+                        <p class="education-gpa">GPA: 3.8/4.0</p>
+                    </div>
+                </div>
+                <div class="certifications-column">
+                    <h3 class="column-title">Certifications</h3>
+                    <div class="certifications-list">
+                        <div class="certification-item">
+                            <h4 class="certification-name">AWS Solutions Architect - Associate</h4>
+                            <p class="certification-issuer">Amazon Web Services</p>
+                            <div class="certification-meta">
+                                <span class="certification-year">2023</span>
+                                <span class="certification-id">SAA-C03-123456</span>
+                            </div>
+                            <div class="certificate-image">
+                                <img src="https://via.placeholder.com/300x200/e1f5fe/0277bd?text=AWS+Certificate" alt="AWS Certificate" />
+                            </div>
+                        </div>
+                        <div class="certification-item">
+                            <h4 class="certification-name">Oracle Java SE 11 Developer</h4>
+                            <p class="certification-issuer">Oracle</p>
+                            <div class="certification-meta">
+                                <span class="certification-year">2022</span>
+                                <span class="certification-id">1Z0-819-789123</span>
+                            </div>
+                            <div class="certificate-image">
+                                <img src="https://via.placeholder.com/300x200/fff3e0/f57c00?text=Oracle+Certificate" alt="Oracle Certificate" />
+                            </div>
+                        </div>
+                        <div class="certification-item">
+                            <h4 class="certification-name">Spring Professional</h4>
+                            <p class="certification-issuer">VMware</p>
+                            <div class="certification-meta">
+                                <span class="certification-year">2021</span>
+                                <span class="certification-id">SPR-456789</span>
+                            </div>
+                            <div class="certificate-image">
+                                <img src="https://via.placeholder.com/300x200/e8f5e8/2e7d32?text=Spring+Certificate" alt="Spring Certificate" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="interests-section">
+                <h3 class="column-title">Interests & Hobbies</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <i class="fas fa-code"></i>
+                        <span>Open Source</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-mountain"></i>
+                        <span>Hiking</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-book"></i>
+                        <span>Tech Books</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-chess"></i>
+                        <span>Chess</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-camera"></i>
+                        <span>Photography</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Gaming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section" id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <p class="section-subtitle">Professional milestones and recognitions</p>
+            <div class="achievements-timeline">
+                <div class="achievement-item">
+                    <div class="achievement-year">2023</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Outstanding Performance Award</h3>
+                        <span class="achievement-organization">TechCorp Inc.</span>
+                        <p class="achievement-description">
+                            Recognized for outstanding performance and leadership in backend development
+                        </p>
+                        <div class="achievement-image">
+                            <img src="https://via.placeholder.com/300x200/fff9c4/f9a825?text=Performance+Award" alt="Performance Award Certificate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-year">2022</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">AWS Solutions Architect Certification</h3>
+                        <span class="achievement-organization">Amazon Web Services</span>
+                        <p class="achievement-description">
+                            Achieved professional level certification in AWS architecture
+                        </p>
+                        <div class="achievement-image">
+                            <img src="https://via.placeholder.com/300x200/e1f5fe/0277bd?text=AWS+Achievement" alt="AWS Achievement Certificate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-year">2021</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Hackathon Winner</h3>
+                        <span class="achievement-organization">TechMeet Annual Hackathon</span>
+                        <p class="achievement-description">
+                            First place in 48-hour hackathon with innovative fintech solution
+                        </p>
+                        <div class="achievement-image">
+                            <img src="https://via.placeholder.com/300x200/f3e5f5/8e24aa?text=Hackathon+Winner" alt="Hackathon Winner Certificate" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss opportunities and collaborations</p>
+            <div class="contact-info-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:john.doe@email.com" class="contact-value">john.doe@email.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+1234567890" class="contact-value">+1 (234) 567-890</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">San Francisco, CA</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Connect with me</h4>
+                        <div class="social-buttons">
+                            <a href="https://linkedin.com/in/johndoe" class="social-btn">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn Profile
+                            </a>
+                            <a href="https://github.com/johndoe" class="social-btn">
+                                <i class="fab fa-github"></i>
+                                GitHub Profile
+                            </a>
+                            <a href="https://twitter.com/johndoe" class="social-btn">
+                                <i class="fab fa-twitter"></i>
+                                Twitter Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 John Doe. All rights reserved.</p>
+                <p>Built with HTML, CSS, and JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app-updated.js"></script>
+</body>
+</html>
