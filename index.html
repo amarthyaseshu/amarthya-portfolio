@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+    <!-- Network Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -27,7 +32,7 @@
                 <li class="nav-item">
                     <a href="#experience" class="nav-link">Experience</a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="#education" class="nav-link">Education</a>
                 </li>
                 <li class="nav-item">
@@ -64,7 +69,9 @@
                     <span class="static-text">Java Consultant @ Deloitte USI</span>
                 </div>
                 <p class="hero-description">
-                    Experienced Java Developer with 4+ years of expertise in building scalable backend systems using Spring Boot, Microservices, and AI tools. Passionate about Clean code, System design, and Solving complex problems.
+                    Experienced Java Developer with 5+ years of expertise in building scalable backend systems using
+                    Spring Boot, Microservices, and AI tools. Passionate about Clean code, System design, and Solving
+                    complex problems.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn--primary btn--lg">View My Work</a>
@@ -80,7 +87,8 @@
                     <a href="https://leetcode.com/u/amarthyaseshu2/" target="_blank" aria-label="LeetCode">
                         <i class="fas fa-code"></i>
                     </a>
-                    <a href="https://github.com/amarthyaseshu/images/raw/main/AmarthyaJavaDevResume.pdf" target="_blank" aria-label="Resume">
+                    <a href="https://github.com/amarthyaseshu/images/raw/main/AmarthyaJavaDevResume.pdf" target="_blank"
+                        aria-label="Resume">
                         <i class="fas fa-file-alt"></i>
                     </a>
                 </div>
@@ -99,7 +107,7 @@
                     <div class="skills-list">
                         <div class="skill-item" data-skill="90">
                             <div class="skill-header">
-                                <span class="skill-name">Java17</span>
+                                <span class="skill-name">Java21</span>
                                 <span class="skill-percentage">90%</span>
                             </div>
                             <div class="skill-bar">
@@ -133,7 +141,7 @@
                                 <div class="skill-progress"></div>
                             </div>
                         </div>
-                         <div class="skill-item" data-skill="80">
+                        <div class="skill-item" data-skill="80">
                             <div class="skill-header">
                                 <span class="skill-name">Spring AI</span>
                                 <span class="skill-percentage">80%</span>
@@ -160,7 +168,7 @@
                                 <div class="skill-progress"></div>
                             </div>
                         </div>
-                         <div class="skill-item" data-skill="80">
+                        <div class="skill-item" data-skill="80">
                             <div class="skill-header">
                                 <span class="skill-name">gRPC</span>
                                 <span class="skill-percentage">80%</span>
@@ -174,6 +182,25 @@
                 <div class="skill-category">
                     <h3 class="category-title">Database & Cloud</h3>
                     <div class="skills-list">
+                        <div class="skill-item" data-skill="70">
+                            <div class="skill-header">
+                                <span class="skill-name">AWS(S3, IAM, EC2, ECS, AWS CLI/SSH, ECR, SSM Parameter Store,
+                                    AMIS)</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="70">
+                            <div class="skill-header">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
                         <div class="skill-item" data-skill="85">
                             <div class="skill-header">
                                 <span class="skill-name">MySQL/PostgreSQL</span>
@@ -210,15 +237,6 @@
                                 <div class="skill-progress"></div>
                             </div>
                         </div>
-                        <div class="skill-item" data-skill="70">
-                            <div class="skill-header">
-                                <span class="skill-name">Docker</span>
-                                <span class="skill-percentage">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -249,7 +267,8 @@
                             <span class="project-duration">Jul 2023 - Sep 2025</span>
                         </div>
                         <p class="project-description">
-                            Developed a new training feature to enhance employee learning and development programs in VZ ACSS Website
+                            Developed a new training feature to enhance employee learning and development programs in VZ
+                            ACSS Website
 
                         </p>
                         <div class="project-tech">
@@ -272,7 +291,8 @@
                             <span class="project-duration">Jul 2023 - Sep 2025</span>
                         </div>
                         <p class="project-description">
-                             Migrated the monolithic legacy backend services to microservices using reactive spring framework in an agile environment
+                            Migrated the monolithic legacy backend services to microservices using reactive spring
+                            framework in an agile environment
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Java17</span>
@@ -300,7 +320,7 @@
                             <span class="project-duration">Jul 2023 - Sep 2025</span>
                         </div>
                         <p class="project-description">
-                             Rate limiting and email tampering security fixes
+                            Rate limiting and email tampering security fixes
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Java17</span>
@@ -311,7 +331,8 @@
                         </div>
                         <div class="project-achievements">
                             <ul>
-                                <li>Prevented hackers to send malacious links to users through email tampering and prevented email spams through rate limiting </li>
+                                <li>Prevented hackers to send malacious links to users through email tampering and
+                                    prevented email spams through rate limiting </li>
                             </ul>
                         </div>
                     </div>
@@ -348,8 +369,9 @@
                         </div>
                         <p class="project-description">
                             A fun car game which helps in learning Math faster. <br>
-                            <br> 
-                            How to play: Once the game starts, solve the math problems, if answer is right car moves or stops.
+                            <br>
+                            How to play: Once the game starts, solve the math problems, if answer is right car moves or
+                            stops.
                             Reach the destination before timer runs out!
                         </p>
                         <div class="project-tech">
@@ -358,11 +380,13 @@
                             <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/amarthyaseshu/project-genius-driver" target="_blank" class="project-link">
+                            <a href="https://github.com/amarthyaseshu/project-genius-driver" target="_blank"
+                                class="project-link">
                                 <i class="fab fa-github"></i>
                                 View Code
                             </a>
-                            <a href="https://amarthyaseshu.github.io/project-genius-driver/" target="_blank" class="project-link">
+                            <a href="https://amarthyaseshu.github.io/project-genius-driver/" target="_blank"
+                                class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                                 Live Demo
                             </a>
@@ -374,7 +398,7 @@
                         </div>
                         <p class="project-description">
                             Nutrition & Welness Tracker. <br>
-                            <br> 
+                            <br>
                             How to Use: By default it shows the vitamins required for a person & foods required for it.
                             After providing foods consumed, it'll show vitamins covered & left out!
                         </p>
@@ -415,9 +439,12 @@
                         </p>
                         <div class="experience-highlights">
                             <ul>
-                                <li>Migrated the monolithic legacy backend services to latest versions, Java 21, Hibernate 6 & Liberty servers</li>
-                                 <li style="font-weight: bold;">Tools and Technologies Used: </li>Java21, Spring, Hibernate
-                                <li style="font-weight: bold;">Challenges: </li> Working on critical framework level changes, and debugging a large legacy codebase
+                                <li>Migrated the monolithic legacy backend services to latest versions, Java 21,
+                                    Hibernate 6 & Liberty servers</li>
+                                <li style="font-weight: bold;">Tools and Technologies Used: </li>Java21, Spring,
+                                Hibernate
+                                <li style="font-weight: bold;">Challenges: </li> Working on critical framework level
+                                changes, and debugging a large legacy codebase
                             </ul>
                         </div>
                     </div>
@@ -433,10 +460,15 @@
                         <div class="experience-highlights">
                             <ul>
                                 <li>Rate limiting and email tampering secuirty fixes</li>
-                                <li>Developed a new training feature to enhance employee learning and development programs in VZ ACSS Website</li>
-                                <li>Migrated the monolithic legacy backend services to microservices using reactive spring framework in an agile environment</li>
-                                 <li style="font-weight: bold;">Tools and Technologies Used: </li>Java17, Spring Boot, Microservices, Spring Reactive, JUnit, Maven, Jenkins, Kibana
-                                <li style="font-weight: bold;">Challenges: </li> Working on critical framework level changes, working with loops in reactive programming, and debugging a large legacy codebase
+                                <li>Developed a new training feature to enhance employee learning and development
+                                    programs in VZ ACSS Website</li>
+                                <li>Migrated the monolithic legacy backend services to microservices using reactive
+                                    spring framework in an agile environment</li>
+                                <li style="font-weight: bold;">Tools and Technologies Used: </li>Java17, Spring Boot,
+                                Microservices, Spring Reactive, JUnit, Maven, Jenkins, Kibana
+                                <li style="font-weight: bold;">Challenges: </li> Working on critical framework level
+                                changes, working with loops in reactive programming, and debugging a large legacy
+                                codebase
                             </ul>
                         </div>
                     </div>
@@ -447,14 +479,20 @@
                         <h3 class="experience-title">Java Backend Developer</h3>
                         <span class="experience-company">Dolphins India PS Pvt Ltd</span>
                         <p class="experience-description">
-                            An e-commerce startup that helps sellers market their products and facilitates easy purchasing for customers.
+                            An e-commerce startup that helps sellers market their products and facilitates easy
+                            purchasing for customers.
                         </p>
                         <div class="experience-highlights">
                             <ul>
-                                <li>Developed a product view service, backend, which acquires data from multiple microservices and orchestrates them using Apache camel, provides precise data to UI</li>
-                                <li>Implemented exception handling and logging utilities to effectively track errors and enhance system reliability</li>
+                                <li>Developed a product view service, backend, which acquires data from multiple
+                                    microservices and orchestrates them using Apache camel, provides precise data to UI
+                                </li>
+                                <li>Implemented exception handling and logging utilities to effectively track errors and
+                                    enhance system reliability</li>
                                 <li>Integrated with Razorpay payment gateway and Shiprocket shipping portal</li>
-                                <li style="font-weight: bold;">Tools and Technologies Used: </li>Java11, Spring Boot, MongoDB, Redis, Apache Cassandra, Apache Camel, Multithreading (Completable Future), Microservices, Aspect oriented programming concepts
+                                <li style="font-weight: bold;">Tools and Technologies Used: </li>Java11, Spring Boot,
+                                MongoDB, Redis, Apache Cassandra, Apache Camel, Multithreading (Completable Future),
+                                Microservices, Aspect oriented programming concepts
                                 <li style="font-weight: bold;">Challenges: </li> Working with Camel-based routing
                             </ul>
                         </div>
@@ -492,10 +530,11 @@
                             </div>
                             <br>
                             <div class="certificate-image">
-                                 <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/fullstackdevcertification.jpg" target="_blank" class="project-link">
-                                <i class="fas fa-certificate"></i>
-                                View Certificate
-                            </a>
+                                <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/fullstackdevcertification.jpg"
+                                    target="_blank" class="project-link">
+                                    <i class="fas fa-certificate"></i>
+                                    View Certificate
+                                </a>
                                 <!-- <img src="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/fullstackdevcertification.jpg" width="600" height="300" alt="Java Full Stack Development" /> -->
                             </div>
                         </div>
@@ -541,7 +580,8 @@
                             Recognized for outstanding performance and leadership in backend development
                         </p>
                         <div class="achievement-image">
-                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/technicalexcellence.jpg" target="_blank" class="project-link">
+                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/technicalexcellence.jpg"
+                                target="_blank" class="project-link">
                                 <i class="fas fa-award"></i>
                                 View Award
                             </a>
@@ -555,10 +595,12 @@
                         <h3 class="achievement-title">Star of the Month</h3>
                         <span class="achievement-organization">TCS</span>
                         <p class="achievement-description">
-                            Recognized for outstanding performance for analyzing and providing report of complex legacy systems
+                            Recognized for outstanding performance for analyzing and providing report of complex legacy
+                            systems
                         </p>
                         <div class="achievement-image">
-                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/starofthemonth.jpg" target="_blank" class="project-link">
+                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/starofthemonth.jpg"
+                                target="_blank" class="project-link">
                                 <i class="fas fa-award"></i>
                                 View Award
                             </a>
@@ -575,7 +617,8 @@
                             Received for immediately resolving build issues
                         </p>
                         <div class="achievement-image">
-                             <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/onthespot.jpg" target="_blank" class="project-link">
+                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/onthespot.jpg"
+                                target="_blank" class="project-link">
                                 <i class="fas fa-award"></i>
                                 View Award
                             </a>
@@ -592,7 +635,8 @@
                             ProGrad Bootcamp Pro Show Winner, game development event
                         </p>
                         <div class="achievement-image">
-                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/progradwinner.jpg" target="_blank" class="project-link">
+                            <a href="https://raw.githubusercontent.com/amarthyaseshu/images/refs/heads/main/progradwinner.jpg"
+                                target="_blank" class="project-link">
                                 <i class="fas fa-award"></i>
                                 View Award
                             </a>
@@ -615,7 +659,8 @@
                         <i class="fas fa-envelope"></i>
                         <div class="contact-details">
                             <span class="contact-label">Email</span>
-                            <a href="mailto:amarthyaworkmail@gmail.com" class="contact-value">amarthyaworkmail@gmail.com</a>
+                            <a href="mailto:amarthyaworkmail@gmail.com"
+                                class="contact-value">amarthyaworkmail@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -628,11 +673,11 @@
                     <div class="contact-social">
                         <h4>Connect with me</h4>
                         <div class="social-buttons">
-                            <a href="https://www.linkedin.com/in/amarthya-seshu"  target="_blank" class="social-btn">
+                            <a href="https://www.linkedin.com/in/amarthya-seshu" target="_blank" class="social-btn">
                                 <i class="fab fa-linkedin"></i>
                                 LinkedIn Profile
                             </a>
-                            <a href="https://github.com/amarthyaseshu"  target="_blank" class="social-btn">
+                            <a href="https://github.com/amarthyaseshu" target="_blank" class="social-btn">
                                 <i class="fab fa-github"></i>
                                 GitHub Profile
                             </a>
@@ -641,7 +686,8 @@
                     <div class="contact-social" id="resume">
                         <h4>Download Resume</h4>
                         <div class="social-buttons">
-                         <a href="https://github.com/amarthyaseshu/images/raw/main/AmarthyaJavaDevResume.pdf" class="social-btn">
+                            <a href="https://github.com/amarthyaseshu/images/raw/main/AmarthyaJavaDevResume.pdf"
+                                class="social-btn">
                                 <i class="fas fa-file-alt"></i>
                                 Download Resume
                             </a>
@@ -656,7 +702,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Amarthya V. All rights reserved.</p>
+                <p>&copy; 2026 Amarthya V. All rights reserved.</p>
                 <p>Built with HTML, CSS, and JavaScript</p>
             </div>
         </div>
@@ -664,4 +710,5 @@
 
     <script src="app-updated.js"></script>
 </body>
+
 </html>

@@ -737,6 +737,22 @@ select.form-control {
     format('woff2');
 }
 
+/*
+    NETWORK BACKGROUND CANVAS
+    =========================
+    Fixed full-viewport canvas for animated network background.
+    Sits behind all content, never intercepts pointer events.
+*/
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 /* END PERPLEXITY DESIGN SYSTEM */
 /* 
     PERSONAL WEBSITE STYLES FOR JAVA BACKEND DEVELOPER

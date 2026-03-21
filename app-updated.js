@@ -630,3 +630,223 @@ document.addEventListener('visibilitychange', () => {
 });
 
 console.log('🎉 Personal Website JavaScript Loaded Successfully!');
+
+/* ========================================
+   NETWORK BACKGROUND ANIMATION
+   ========================================
+   Renders an interactive network/node graph on #bg-canvas.
+   - Theme-aware (light teal / dark teal)
+   - Mouse-interactive (nodes attracted to cursor)
+   - Reduced motion & visibility aware
+   - Fewer particles on mobile for performance
+*/
+
+(function NetworkBackground() {
+    const canvas = document.getElementById('bg-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    /* --- Configuration --- */
+    const DESKTOP_PARTICLE_COUNT = 55;
+    const MOBILE_PARTICLE_COUNT = 25;
+    const CONNECTION_DISTANCE = 150;
+    const MOUSE_RADIUS = 180;
+    const MOUSE_FORCE = 0.02;
+    const BASE_SPEED = 0.35;
+
+    /* --- Color palettes (matching design-system tokens) --- */
+    const PALETTE = {
+        light: {
+            node: 'rgba(33, 128, 141, 0.18)',   // teal-500 low opacity
+            nodeBright: 'rgba(33, 128, 141, 0.35)',
+            line: 'rgba(33, 128, 141, 0.07)',
+            lineClose: 'rgba(33, 128, 141, 0.14)'
+        },
+        dark: {
+            node: 'rgba(50, 184, 198, 0.2)',     // teal-300 low opacity
+            nodeBright: 'rgba(50, 184, 198, 0.45)',
+            line: 'rgba(50, 184, 198, 0.08)',
+            lineClose: 'rgba(50, 184, 198, 0.18)'
+        }
+    };
+
+    /* --- State --- */
+    let particles = [];
+    let mouse = { x: -9999, y: -9999 };
+    let animFrameId = null;
+    let paused = false;
+
+    /* --- Helpers --- */
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    function getTheme() {
+        const t = document.body.getAttribute('data-theme');
+        return t === 'dark' ? 'dark' : 'light';
+    }
+
+    function prefersReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    /* --- Canvas sizing --- */
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    /* --- Particle factory --- */
+    function createParticle() {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = BASE_SPEED + Math.random() * 0.25;
+        return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            radius: 1.5 + Math.random() * 1.8
+        };
+    }
+
+    function initParticles() {
+        const count = isMobile() ? MOBILE_PARTICLE_COUNT : DESKTOP_PARTICLE_COUNT;
+        particles = [];
+        for (let i = 0; i < count; i++) {
+            particles.push(createParticle());
+        }
+    }
+
+    /* --- Animation loop --- */
+    function draw() {
+        if (paused || prefersReducedMotion()) {
+            animFrameId = requestAnimationFrame(draw);
+            return;
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const pal = PALETTE[getTheme()];
+        const w = canvas.width;
+        const h = canvas.height;
+
+        // Update positions
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            // Mouse attraction
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const distMouse = Math.sqrt(dx * dx + dy * dy);
+            if (distMouse < MOUSE_RADIUS && distMouse > 0) {
+                p.vx += (dx / distMouse) * MOUSE_FORCE;
+                p.vy += (dy / distMouse) * MOUSE_FORCE;
+            }
+
+            // Dampen velocity slightly to keep drift gentle
+            p.vx *= 0.995;
+            p.vy *= 0.995;
+
+            // Ensure minimum speed so particles never stop
+            const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+            if (speed < BASE_SPEED * 0.5) {
+                const factor = (BASE_SPEED * 0.5) / (speed || 0.01);
+                p.vx *= factor;
+                p.vy *= factor;
+            }
+
+            p.x += p.vx;
+            p.y += p.vy;
+
+            // Wrap around edges
+            if (p.x < -10) p.x = w + 10;
+            if (p.x > w + 10) p.x = -10;
+            if (p.y < -10) p.y = h + 10;
+            if (p.y > h + 10) p.y = -10;
+        }
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const a = particles[i];
+                const b = particles[j];
+                const dx = a.x - b.x;
+                const dy = a.y - b.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < CONNECTION_DISTANCE) {
+                    const ratio = 1 - dist / CONNECTION_DISTANCE;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.strokeStyle = ratio > 0.5 ? pal.lineClose : pal.line;
+                    ctx.lineWidth = ratio * 1.2;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Draw nodes
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const nearMouse = Math.sqrt(dx * dx + dy * dy) < MOUSE_RADIUS;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, nearMouse ? p.radius * 1.4 : p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = nearMouse ? pal.nodeBright : pal.node;
+            ctx.fill();
+        }
+
+        animFrameId = requestAnimationFrame(draw);
+    }
+
+    /* --- Event listeners --- */
+    window.addEventListener('mousemove', function(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', function() {
+        mouse.x = -9999;
+        mouse.y = -9999;
+    });
+
+    // Touch support for mobile
+    window.addEventListener('touchmove', function(e) {
+        if (e.touches.length > 0) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    window.addEventListener('touchend', function() {
+        mouse.x = -9999;
+        mouse.y = -9999;
+    });
+
+    // Debounced resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            resize();
+            initParticles();
+        }, 250);
+    });
+
+    // Pause when hidden
+    document.addEventListener('visibilitychange', function() {
+        paused = document.visibilityState !== 'visible';
+    });
+
+    /* --- Bootstrap --- */
+    resize();
+    initParticles();
+    draw();
+
+    console.log('🌐 Network background initialized');
+})();
